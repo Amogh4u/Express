@@ -1,0 +1,64 @@
+### getMethod for All users
+
+GET http://localhost:3000/users/getAllUsers
+
+
+### post method to Add a User
+
+POST http://localhost:3000/users/AddOneUser
+Content-Type: application/json
+
+{
+    "userID": 4,
+    "name": "New User"
+}
+
+
+
+###  post method to add an order
+
+POST http://localhost:3000/orders/AddOneOrder
+Content-Type: application/json
+
+{
+    "orderID":4,
+    "userID": 3,
+    "subTotal": 100,
+    "date": "28 November 2020"
+}
+
+
+###  get method to getAll orders
+GET http://localhost:3000/orders/getAllOrders
+
+
+### post method to get all users
+POST http://localhost:3000/users/getAllUsers
+Content-Type: application/json
+
+{}
+
+
+
+### post method to get all orders
+
+POST http://localhost:3000/orders/getAllOrders
+Content-Type: application/json
+
+{}
+
+
+###  API to get processed data (first answer)
+
+POST http://localhost:3000/users/userOrderProcessedData
+Content-Type: application/json
+
+{}
+
+
+### API to to update UserOrder Count ( 2nd question answer)
+
+POST http://localhost:3000/users/updateUserOrders
+Content-Type: application/json
+
+{}
