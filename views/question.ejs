@@ -18,7 +18,7 @@
         <h1 class="mb-4">QUESTIONAIRE</h1>
     </div>
     <div>
-        <h3 class="mb-4"><%= question.questionName %></h3>
+        <h3 class="mb-6"><%= question.questionName %></h3>
     </div>
     <div>
         <h4>Select the Type of the answer you want to give</h4>
@@ -29,7 +29,7 @@
             </select>
             
     </div>
-    <div>
+    <div class="mb-6">
         <% let op = options.optionArray %> 
         <form action = "/questions/getNextQuestionAndOptions", method="POST">
             <input type="hidden" id="option1" class = "question" name="option", value= <%= op[0].nextQuestionID %>>
@@ -44,7 +44,7 @@
             <% } %>
         </form>
     </div>
-    <div>
+    <div class="mb-8">
         <a href="/questions/getNextSourceQuestion/" onclick="location.href=this.href+'<%= question.questionID %>';return false;" class="btn btn-success" value = <% question.questionID %>> Skip</a>
     </div>
 </body>
