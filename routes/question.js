@@ -52,10 +52,9 @@ router.route('/getQuestionAndOptions').get( async (req, res, next) => {
 });
 
 router.route('/getNextQuestionAndOptions').post( async (req, res, next) => {
-    console.log('erq res',JSON.stringify(req.body))
+    console.log('erq res',JSON.stringify(req.body),req.body.constructor)
     let body = JSON.stringify(req.body.option);
-    console.log('type of body', body[0]);
-    if(body[0] === '[') {
+    if((body && body[0] === '[') || (Object.keys(req.body).length === 0 && req.body.constructor === Object)) {
         res.render('invalid_value');
         next()
     } else if(req.body && req.body.option && req.body.option !== '')  {
