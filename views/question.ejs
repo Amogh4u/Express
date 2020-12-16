@@ -14,38 +14,44 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="">
-        <h1 class="mb-4">QUESTIONAIRE</h1>
+    <div class="" style="font-weight: 700;margin-left: 35%;">
+        <h1 class="mb-4" >QUESTIONAIRE</h1>
+    </div><hr>
+    <div style="margin-left: 5%;">
+        <h3 class="mb-6"><%= question.questionName %></h3><br>
     </div>
     <div>
-        <h3 class="mb-6"><%= question.questionName %></h3>
-    </div>
-    <div>
-        <h4>Select the Type of the answer you want to give</h4>
-        <select name="price" action="post" id="mySelect" onChange="changeInputType(this.value)">
-            <option value="Radio">Please seleect</option>
+        <h4 style="margin-left: 5%;">Select the Type of the answer you want to give</h4><br>
+        <select name="price" action="post" id="mySelect" onChange="changeInputType(this.value)" style="font-size:larger; margin-left:10%; width:15%;">
+            <option value="Radio">Please select</option>
             <option value="Radio">Radio Button</option>
             <option value="checkbox">Check Box</option>
             </select>
             
-    </div>
+    </div><br>
     <div class="mb-6">
         <% let op = options.optionArray %> 
         <form action = "/questions/getNextQuestionAndOptions", method="POST">
-            <input type="hidden" id="option1" class = "question" name="option", value= <%= op[0].nextQuestionID %>>
-            <label for="option1"> <%= op[0].option %> </label> <br><br>
-            <input type="hidden" id="option2" class = "question" name="option" value= <%= op[1].nextQuestionID %>>
-            <label for="option2"> <%= op[1].option %> </label> <br><br>
+            <div style="margin-left: 10%; font-size:larger;">
+                <input type="hidden" id="option1" class = "question" name="option", value= <%= op[0].nextQuestionID %>>
+                <label for="option1"> <%= op[0].option %> </label> <br><br>
+                <input type="hidden" id="option2" class = "question" name="option" value= <%= op[1].nextQuestionID %>>
+                <label for="option2"> <%= op[1].option %> </label> <br><br>
+            </div>
             <% if( op[0].nextQuestionID !== null) { %>
-                <button type="submit" class="btn btn-primary"> Next</button>
+                <div style="margin-left: 5%;">
+                    <button type="submit" class="btn btn-primary" style="border-radius: 2px; width:35%"> Next</button>
+                </div>
             <% } %>
             <% if( op[0].nextQuestionID === null) { %>
-                <button type="submit" class="btn btn-primary"> Submit</button> <br><br>
+                <div style="margin-left: 5%; ">
+                    <button type="submit" class="btn btn-primary"style="border-radius: 2px; width:35%"> Submit</button> <br><br>
+                </div>
             <% } %>
         </form>
-    </div>
-    <div class="mb-8">
-        <a href="/questions/getNextSourceQuestion/" onclick="location.href=this.href+'<%= question.questionID %>';return false;" class="btn btn-success" value = <% question.questionID %>> Skip</a>
+    </div><br>
+    <div class="mb-8" style="margin-left: 5%;">
+        <a href="/questions/getNextSourceQuestion/" onclick="location.href=this.href+'<%= question.questionID %>';return false;" style="border-radius: 2px;width:35%"class="btn btn-success" value = <% question.questionID %> > Skip</a>
     </div>
 </body>
 </html>
