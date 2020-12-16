@@ -1,11 +1,11 @@
 ### getMethod for All users
 
-GET http://localhost:3000/users/getAllUsers
+GET http://localhost:3000/questions/getAllQuestions
 
 
 ### post method to Add a User
 
-POST http://localhost:3000/users/AddOneUser
+GET http://localhost:3000/options/getAllOptions
 Content-Type: application/json
 
 {
@@ -17,20 +17,19 @@ Content-Type: application/json
 
 ###  post method to add an order
 
-POST http://localhost:3000/orders/AddOneOrder
+POST http://localhost:3000/options/getOptionsByQuestionID
 Content-Type: application/json
 
 {
-    "orderID":4,
-    "userID": 3,
-    "subTotal": 100,
-    "date": "28 November 2020"
+    "questionID": 1
 }
 
 
 ###  get method to getAll orders
-GET http://localhost:3000/orders/getAllOrders
+GET http://localhost:3000/questions/getNextSourceQuestion/1
+Content-Type: application/json
 
+{}
 
 ### post method to get all users
 POST http://localhost:3000/users/getAllUsers

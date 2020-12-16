@@ -1,4 +1,4 @@
-const order = require('../models/order_model')
+const order = require('../models/question_model')
 
 
 module.exports.getAllOrders = async () => {
